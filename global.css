@@ -79,11 +79,11 @@
   }
 
   .home-add-icon {
-    @apply size-12;
+    @apply size-8;
   }
 
   .home-balance-card {
-    @apply my-2.5 min-h-50 justify-between gap-5 rounded-bl-4xl rounded-tr-4xl bg-accent p-6;
+    @apply my-2.5 min-h-30 justify-between gap-5 rounded-bl-4xl rounded-tr-4xl bg-accent p-6;
   }
 
   .home-balance-label {

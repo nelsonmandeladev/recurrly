@@ -37,28 +37,6 @@ export type GlobalSafeAreaViewProps = SafeAreaViewProps & {
   paddingX?: GlobalSafeAreaPadding;
 };
 
-function resolvePaddingX(
-  paddingX: GlobalSafeAreaPadding | undefined,
-  preset: GlobalSafeAreaPreset
-) {
-  if (typeof paddingX === "number") {
-    return spacing[paddingX];
-  }
-
-  if (paddingX === true) {
-    return spacing[5];
-  }
-
-  if (paddingX === false) {
-    return undefined;
-  }
-
-  if (preset === "content") {
-    return spacing[5];
-  }
-
-  return undefined;
-}
 
 export const GlobalSafeAreaView = forwardRef<
   ComponentRef<typeof RNSafeAreaView>,
@@ -78,12 +56,8 @@ export const GlobalSafeAreaView = forwardRef<
   },
   ref
 ) {
-  const resolvedPaddingX = resolvePaddingX(paddingX, preset);
   const resolvedEdges = edges ?? insetPresets[insetPreset];
-  const backgroundStyle =
-    surface === "transparent" ? undefined : { backgroundColor: colors[surface] };
-  const paddingStyle =
-    resolvedPaddingX === undefined ? undefined : { paddingHorizontal: resolvedPaddingX };
+
 
   return (
     <StyledSafeAreaView
@@ -91,7 +65,9 @@ export const GlobalSafeAreaView = forwardRef<
       mode={mode}
       edges={resolvedEdges}
       className={clsx(safeAreaPresets[preset], className)}
-      style={[backgroundStyle, paddingStyle, style]}
+      style={{
+        backgroundColor: colors.background,
+      }}
       {...props}
     >
       {children}
