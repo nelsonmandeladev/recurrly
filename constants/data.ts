@@ -105,3 +105,54 @@ export const HOME_SUBSCRIPTIONS: Subscription[] = [
         color: "#b8e8d0",
     },
 ];
+
+export const INSIGHTS_WEEKLY_SPENDING: InsightChartPoint[] = [
+    { label: "Mon", value: 36 },
+    { label: "Tue", value: 31 },
+    { label: "Wed", value: 23 },
+    { label: "Thr", value: 40, highlighted: true },
+    { label: "Fri", value: 34 },
+    { label: "Sat", value: 21 },
+    { label: "Sun", value: 24 },
+];
+
+export const INSIGHTS_SUMMARY: InsightSummary = {
+    title: "Expenses",
+    period: "March 2026",
+    amount: -424.63,
+    currency: "USD",
+    changePercentage: 12,
+};
+
+export const INSIGHTS_HISTORY: InsightHistoryItem[] = [
+    {
+        id: "claude-history",
+        icon: icons.claude,
+        name: "Claude",
+        chargedAt: "2026-06-25T12:00:00",
+        price: 9.84,
+        currency: "USD",
+        billingLabel: "per month",
+        color: "#f6d64b",
+    },
+    {
+        id: "canva-history",
+        icon: icons.canva,
+        name: "Canva",
+        chargedAt: "2026-06-30T16:00:00",
+        price: 43.89,
+        currency: "USD",
+        billingLabel: "per month",
+        color: "#abd8c8",
+    },
+    {
+        id: "github-history",
+        icon: icons.github,
+        name: "GitHub",
+        chargedAt: "2026-06-29T13:30:00",
+        price: 19.99,
+        currency: "USD",
+        billingLabel: "per month",
+        color: "#efe8d3",
+    },
+];

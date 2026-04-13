@@ -13,10 +13,26 @@ export const formatCurrency = (value: number, currency = "USD"): string => {
     }
 };
 
+export const formatSignedCurrency = (value: number, currency = "USD"): string => {
+    const absoluteValue = formatCurrency(Math.abs(value), currency);
+    return `${value < 0 ? "-" : ""}${absoluteValue}`;
+};
+
+export const formatSignedPercentage = (value: number): string => {
+    if (value === 0) return "0%";
+    return `${value > 0 ? "+" : "-"}${Math.abs(value)}%`;
+};
+
 export const formatSubscriptionDateTime = (value?: string): string => {
     if (!value) return "Not provided";
     const parsedDate = dayjs(value);
     return parsedDate.isValid() ? parsedDate.format("MM/DD/YYYY") : "Not provided";
+};
+
+export const formatHistoryDateTime = (value?: string): string => {
+    if (!value) return "Not provided";
+    const parsedDate = dayjs(value);
+    return parsedDate.isValid() ? parsedDate.format("MMMM D, HH:mm") : "Not provided";
 };
 
 export const formatStatusLabel = (value?: string): string => {

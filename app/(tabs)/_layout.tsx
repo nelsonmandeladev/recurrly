@@ -13,6 +13,8 @@ export default function TabsRootLayout() {
 
     return (
         <Tabs
+            initialRouteName="index"
+            backBehavior="history"
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: false,
@@ -37,8 +39,6 @@ export default function TabsRootLayout() {
             }}
 
         >
-            <Tabs.Screen name="subscriptions/[id]" options={{ href: null }} />
-
             {tabs.map((tab) => (
                 <Tabs.Screen
                     key={tab.name}
@@ -55,6 +55,8 @@ export default function TabsRootLayout() {
                 />
 
             ))}
+
+            <Tabs.Screen name="subscriptions/[id]" options={{ href: null }} />
         </Tabs>
     )
 }

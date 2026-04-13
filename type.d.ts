@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { ImageSourcePropType } from "react-native";
 
 declare global {
@@ -31,6 +32,7 @@ declare global {
     interface SubscriptionCardProps extends Omit<Subscription, "id"> {
         expanded: boolean;
         onPress: () => void;
+        expandedContent?: ReactNode;
         onCancelPress?: () => void;
         isCancelling?: boolean;
     }
@@ -46,6 +48,33 @@ declare global {
 
     interface UpcomingSubscriptionCardProps
         extends Omit<UpcomingSubscription, "id"> { }
+
+    interface InsightChartPoint {
+        label: string;
+        value: number;
+        highlighted?: boolean;
+    }
+
+    interface InsightSummary {
+        title: string;
+        period: string;
+        amount: number;
+        currency?: string;
+        changePercentage: number;
+    }
+
+    interface InsightHistoryItem {
+        id: string;
+        icon: ImageSourcePropType;
+        name: string;
+        chargedAt: string;
+        price: number;
+        currency?: string;
+        billingLabel: string;
+        color?: string;
+    }
+
+    interface InsightHistoryCardProps extends Omit<InsightHistoryItem, "id"> { }
 
     interface ListHeadingProps {
         title: string;

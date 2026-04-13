@@ -210,6 +210,14 @@
     @apply flex-1 font-sans-bold text-primary;
   }
 
+  .sub-detail-action {
+    @apply min-w-24 items-center rounded-full border border-primary px-5 py-3;
+  }
+
+  .sub-detail-action-text {
+    @apply text-sm font-sans-bold text-primary;
+  }
+
   .sub-cancel {
     @apply mt-2 items-center rounded-full bg-primary py-4;
   }
@@ -224,6 +232,90 @@
 
   .home-empty-state {
     @apply py-4 text-sm font-sans-medium text-black/60;
+  }
+
+  .screen-header {
+    @apply mb-2.5;
+  }
+
+  .screen-nav {
+    @apply flex-row items-center justify-between gap-4;
+  }
+
+  .screen-nav-action {
+    @apply size-8 items-center justify-center rounded-full border border-border bg-card;
+  }
+
+  .screen-nav-icon {
+    @apply size-5;
+  }
+
+  .screen-title {
+    @apply flex-1 text-center text-xl font-sans-bold text-primary;
+  }
+
+  .insights-chart-card {
+    @apply rounded-4xl bg-muted px-4 pb-6 pt-8;
+  }
+
+  .insights-summary-card {
+    @apply my-5 flex-row items-center rounded-3xl border border-border bg-card p-5;
+  }
+
+  .insights-summary-title {
+    @apply text-2xl font-sans-bold text-primary;
+  }
+
+  .insights-summary-period {
+    @apply mt-3 text-xl font-sans-medium text-muted-foreground;
+  }
+
+  .insights-summary-amount {
+    @apply text-3xl font-sans-bold text-primary;
+  }
+
+  .insights-summary-change {
+    @apply mt-3 text-xl font-sans-semibold text-muted-foreground;
+  }
+
+  .insights-history-card {
+    @apply flex-row items-center justify-between gap-4 rounded-[32px] px-5 py-6;
+  }
+
+  .insights-history-main {
+    @apply min-w-0 flex-1 flex-row items-center gap-4;
+  }
+
+  .insights-history-icon-box {
+    @apply size-20 items-center justify-center rounded-3xl bg-white/35;
+  }
+
+  .insights-history-icon {
+    @apply size-16;
+  }
+
+  .insights-history-copy {
+    @apply min-w-0 flex-1;
+  }
+
+  .insights-history-title {
+    @apply text-2xl font-sans-bold text-primary;
+  }
+
+  .insights-history-date {
+    @apply mt-3 text-xl font-sans-medium text-muted-foreground;
+  }
+
+  .insights-history-price-box {
+    @apply shrink-0 items-end;
+  }
+
+  .insights-history-price {
+    @apply text-3xl font-sans-bold text-primary;
+  }
+
+  .insights-history-billing {
+    @apply mt-3 text-xl font-sans-medium text-muted-foreground;
   }
 
   .auth-safe-area {
